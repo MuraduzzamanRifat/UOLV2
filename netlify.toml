@@ -1,0 +1,25 @@
+# Netlify build configuration
+[build]
+  command  = "npx prisma generate && npx prisma db push --accept-data-loss && npm run build"
+  publish  = ".next"
+
+[build.environment]
+  NODE_VERSION                  = "20"
+  PRISMA_HIDE_UPDATE_MESSAGE    = "true"
+  NEXT_TELEMETRY_DISABLED       = "1"
+
+# Required: Netlify needs this plugin to host Next.js apps.
+[[plugins]]
+  package = "@netlify/plugin-nextjs"
+
+# Long-lived caching for Next.js immutable assets.
+[[headers]]
+  for = "/_next/static/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+# Image proxy headers.
+[[headers]]
+  for = "/_next/image*"
+  [headers.values]
+    Cache-Control = "public, max-age=86400"
