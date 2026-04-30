@@ -26,7 +26,11 @@ const SEED: Seed[] = [
     description: 'Pure hydrolysed marine collagen from sustainably caught Icelandic cod. Dissolves clear in hot or cold liquids.',
     story: 'Kalda Naturals operates a closed-loop cooperative that uses every part of the catch — collagen is extracted from skin and bone that would otherwise be waste.',
     image: 'https://images.unsplash.com/photo-1628771065518-0d82f1938462?w=1200&q=85&auto=format&fit=crop',
-    images: ['https://images.unsplash.com/photo-1628771065518-0d82f1938462?w=1200&q=85&auto=format&fit=crop'],
+    images: [
+      'https://images.unsplash.com/photo-1628771065518-0d82f1938462?w=1200&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=1200&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1605281317010-1c1c6a8c5dab?w=1200&q=85&auto=format&fit=crop',
+    ],
     tags: ['Hydrolysed', 'Single source', 'No fillers'],
     rating: 4.8, reviewCount: 192, stock: 28, featured: true },
 
@@ -38,7 +42,11 @@ const SEED: Seed[] = [
     description: 'High-concentration EPA/DHA fish oil from small-vessel wild catch. Low-temperature distilled.',
     story: 'Nord Sea Labs purchase only from vessels under 60 ft, all of which land their catch the day it is pulled.',
     image: 'https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?w=1200&q=85&auto=format&fit=crop',
-    images: ['https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?w=1200&q=85&auto=format&fit=crop'],
+    images: [
+      'https://images.unsplash.com/photo-1584308972272-9e4e7685e80f?w=1200&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=1200&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1605281317010-1c1c6a8c5dab?w=1200&q=85&auto=format&fit=crop',
+    ],
     tags: ['Molecularly distilled', 'Third-party tested'],
     rating: 4.7, reviewCount: 311, stock: 54, featured: false },
 
@@ -50,7 +58,11 @@ const SEED: Seed[] = [
     description: 'A plant-fermented form of tryptophan, the amino acid that supports restful sleep and balanced mood.',
     story: 'Freiburg Ferments grows its strains on molasses and plant sugars — no animal-derived feedstocks.',
     image: 'https://images.unsplash.com/photo-1550572017-edd951b55104?w=1200&q=85&auto=format&fit=crop',
-    images: ['https://images.unsplash.com/photo-1550572017-edd951b55104?w=1200&q=85&auto=format&fit=crop'],
+    images: [
+      'https://images.unsplash.com/photo-1550572017-edd951b55104?w=1200&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=1200&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1605281317010-1c1c6a8c5dab?w=1200&q=85&auto=format&fit=crop',
+    ],
     tags: ['Plant fermented', 'Vegan'],
     rating: 4.5, reviewCount: 88, stock: 36, featured: false },
 
@@ -62,7 +74,11 @@ const SEED: Seed[] = [
     description: 'Traditional red clover tincture made with wild-harvested blossoms and grain alcohol.',
     story: 'Windy Hill works a four-acre meadow on a long rotation to let each patch rest and return.',
     image: 'https://images.unsplash.com/photo-1611073615452-4889ae4664bd?w=1200&q=85&auto=format&fit=crop',
-    images: ['https://images.unsplash.com/photo-1611073615452-4889ae4664bd?w=1200&q=85&auto=format&fit=crop'],
+    images: [
+      'https://images.unsplash.com/photo-1611073615452-4889ae4664bd?w=1200&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=1200&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1605281317010-1c1c6a8c5dab?w=1200&q=85&auto=format&fit=crop',
+    ],
     tags: ['Wild-harvested', 'Hand-pressed'],
     rating: 4.8, reviewCount: 46, stock: 22, featured: true },
 
@@ -74,7 +90,11 @@ const SEED: Seed[] = [
     description: 'Unflavoured grass-fed beef gelatin for broths, jellies, gummies, or a morning cup.',
     story: 'Cooperativa Verde is a collective of eight family farms working rotational pasture in the Cerrado.',
     image: 'https://images.unsplash.com/photo-1607602132700-068258431c6c?w=1200&q=85&auto=format&fit=crop',
-    images: ['https://images.unsplash.com/photo-1607602132700-068258431c6c?w=1200&q=85&auto=format&fit=crop'],
+    images: [
+      'https://images.unsplash.com/photo-1607602132700-068258431c6c?w=1200&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1556228720-195a672e8a03?w=1200&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1605281317010-1c1c6a8c5dab?w=1200&q=85&auto=format&fit=crop',
+    ],
     tags: ['Grass-fed', 'Pasture-raised'],
     rating: 4.7, reviewCount: 158, stock: 44, featured: false },
 
@@ -87,7 +107,11 @@ const SEED: Seed[] = [
     description: 'Single-origin lavender oil from a seven-hundred-metre Provençal plateau.',
     story: 'Maison de la Lavande keeps its own fields above the tree line.',
     image: 'https://images.unsplash.com/photo-1595392029731-a6a402bb536d?w=1200&q=85&auto=format&fit=crop',
-    images: ['https://images.unsplash.com/photo-1595392029731-a6a402bb536d?w=1200&q=85&auto=format&fit=crop'],
+    images: [
+      'https://images.unsplash.com/photo-1595392029731-a6a402bb536d?w=1200&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=1200&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1502810365585-0080d3097d65?w=1200&q=85&auto=format&fit=crop',
+    ],
     tags: ['Steam-distilled', 'Single origin'],
     rating: 4.9, reviewCount: 264, stock: 62, featured: true },
 
@@ -99,7 +123,11 @@ const SEED: Seed[] = [
     description: 'A simple rose water from Damask blooms hand-distilled at dawn in copper alembics.',
     story: 'The cooperative pools the harvest from thirty family gardens and distils within four hours of picking.',
     image: 'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=1200&q=85&auto=format&fit=crop',
-    images: ['https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=1200&q=85&auto=format&fit=crop'],
+    images: [
+      'https://images.unsplash.com/photo-1608571423902-eed4a5ad8108?w=1200&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=1200&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1502810365585-0080d3097d65?w=1200&q=85&auto=format&fit=crop',
+    ],
     tags: ['Hand-distilled', 'Single ingredient'],
     rating: 4.8, reviewCount: 172, stock: 38, featured: false },
 
@@ -111,7 +139,11 @@ const SEED: Seed[] = [
     description: 'A cold-process shampoo bar with fair-trade argan oil and a whisper of rosemary.',
     story: 'Poured by hand in small batches and cured for six weeks before it leaves the shelf.',
     image: 'https://images.unsplash.com/photo-1617897903246-719242758050?w=1200&q=85&auto=format&fit=crop',
-    images: ['https://images.unsplash.com/photo-1617897903246-719242758050?w=1200&q=85&auto=format&fit=crop'],
+    images: [
+      'https://images.unsplash.com/photo-1617897903246-719242758050?w=1200&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=1200&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1502810365585-0080d3097d65?w=1200&q=85&auto=format&fit=crop',
+    ],
     tags: ['Plastic-free', 'Cold-processed'],
     rating: 4.7, reviewCount: 144, stock: 70, featured: false },
 
@@ -123,7 +155,11 @@ const SEED: Seed[] = [
     description: 'A minimalist day cream built on rosehip seed oil and squalane.',
     story: 'Still Studio tests short — every formula lists its ingredients and the reason each one is there.',
     image: 'https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=1200&q=85&auto=format&fit=crop',
-    images: ['https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=1200&q=85&auto=format&fit=crop'],
+    images: [
+      'https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=1200&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1571781926291-c477ebfd024b?w=1200&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1502810365585-0080d3097d65?w=1200&q=85&auto=format&fit=crop',
+    ],
     tags: ['Six ingredients', 'Fragrance-free'],
     rating: 4.9, reviewCount: 88, stock: 18, featured: true },
 
@@ -136,7 +172,11 @@ const SEED: Seed[] = [
     description: 'A simple zinc-and-clay powder with a clean peppermint finish.',
     story: 'Based on a 1950s formula the founder found in a relative\'s store and kept.',
     image: 'https://images.unsplash.com/photo-1620916297893-4c1a02826f9f?w=1200&q=85&auto=format&fit=crop',
-    images: ['https://images.unsplash.com/photo-1620916297893-4c1a02826f9f?w=1200&q=85&auto=format&fit=crop'],
+    images: [
+      'https://images.unsplash.com/photo-1620916297893-4c1a02826f9f?w=1200&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1604578762246-41134e37f9cc?w=1200&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1631730482770-ce8c87b8e164?w=1200&q=85&auto=format&fit=crop',
+    ],
     tags: ['Aluminium-free'],
     rating: 4.7, reviewCount: 214, stock: 90, featured: false },
 
@@ -148,7 +188,11 @@ const SEED: Seed[] = [
     description: 'Four soft-bristle bamboo brushes with compostable handles and recyclable packaging.',
     story: 'The cooperative grows its bamboo on non-arable land and rotates harvest annually.',
     image: 'https://images.unsplash.com/photo-1603729362753-f8162ac6c3df?w=1200&q=85&auto=format&fit=crop',
-    images: ['https://images.unsplash.com/photo-1603729362753-f8162ac6c3df?w=1200&q=85&auto=format&fit=crop'],
+    images: [
+      'https://images.unsplash.com/photo-1603729362753-f8162ac6c3df?w=1200&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1604578762246-41134e37f9cc?w=1200&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1631730482770-ce8c87b8e164?w=1200&q=85&auto=format&fit=crop',
+    ],
     tags: ['Compostable handle', 'Recyclable packaging'],
     rating: 4.6, reviewCount: 186, stock: 128, featured: false },
 
@@ -160,7 +204,11 @@ const SEED: Seed[] = [
     description: 'A traditional olive-and-laurel castile liquid soap in a refillable glass bottle.',
     story: 'Made from oil pressed within twenty miles of the workshop.',
     image: 'https://images.unsplash.com/photo-1584305574647-0cc949a2bb9f?w=1200&q=85&auto=format&fit=crop',
-    images: ['https://images.unsplash.com/photo-1584305574647-0cc949a2bb9f?w=1200&q=85&auto=format&fit=crop'],
+    images: [
+      'https://images.unsplash.com/photo-1584305574647-0cc949a2bb9f?w=1200&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1604578762246-41134e37f9cc?w=1200&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1631730482770-ce8c87b8e164?w=1200&q=85&auto=format&fit=crop',
+    ],
     tags: ['Plant-based', 'Refillable bottle'],
     rating: 4.8, reviewCount: 98, stock: 54, featured: true },
 
@@ -172,7 +220,11 @@ const SEED: Seed[] = [
     description: 'A twist-up mineral deodorant built on magnesium hydroxide.',
     story: 'Tested for two summers by the founder\'s extended family before the product launched.',
     image: 'https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=1200&q=85&auto=format&fit=crop',
-    images: ['https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=1200&q=85&auto=format&fit=crop'],
+    images: [
+      'https://images.unsplash.com/photo-1585386959984-a4155224a1ad?w=1200&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1604578762246-41134e37f9cc?w=1200&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1631730482770-ce8c87b8e164?w=1200&q=85&auto=format&fit=crop',
+    ],
     tags: ['Aluminium-free', 'Unscented variant'],
     rating: 4.6, reviewCount: 132, stock: 46, featured: false },
 
@@ -185,7 +237,11 @@ const SEED: Seed[] = [
     description: 'Unfiltered, unpasteurised wildflower honey from a small Vermont apiary.',
     story: 'Bill Gibson keeps forty hives on a buckwheat meadow.',
     image: 'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=1200&q=85&auto=format&fit=crop',
-    images: ['https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=1200&q=85&auto=format&fit=crop'],
+    images: [
+      'https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=1200&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1542838132-92c53300491e?w=1200&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=1200&q=85&auto=format&fit=crop',
+    ],
     tags: ['Raw', 'Single origin'],
     rating: 4.9, reviewCount: 156, stock: 40, featured: true },
 
@@ -197,7 +253,11 @@ const SEED: Seed[] = [
     description: 'Ceremonial-grade matcha from a seventh-generation Uji family field.',
     story: 'Shade-grown for three weeks, hand-picked, steamed, and stone-ground.',
     image: 'https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=1200&q=85&auto=format&fit=crop',
-    images: ['https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=1200&q=85&auto=format&fit=crop'],
+    images: [
+      'https://images.unsplash.com/photo-1515823064-d6e0c04616a7?w=1200&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1542838132-92c53300491e?w=1200&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=1200&q=85&auto=format&fit=crop',
+    ],
     tags: ['First harvest', 'Stone-ground'],
     rating: 4.9, reviewCount: 78, stock: 18, featured: true },
 
@@ -209,7 +269,11 @@ const SEED: Seed[] = [
     description: 'A single-estate Tuscan olive oil, cold-pressed within four hours of picking.',
     story: 'Podere Vecchio presses only one hundred tins a year.',
     image: 'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=1200&q=85&auto=format&fit=crop',
-    images: ['https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=1200&q=85&auto=format&fit=crop'],
+    images: [
+      'https://images.unsplash.com/photo-1474979266404-7eaacbcd87c5?w=1200&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1542838132-92c53300491e?w=1200&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=1200&q=85&auto=format&fit=crop',
+    ],
     tags: ['Single estate', 'Cold-pressed'],
     rating: 4.8, reviewCount: 92, stock: 28, featured: true },
 
@@ -221,7 +285,11 @@ const SEED: Seed[] = [
     description: 'A single-strain chlorella with a mechanically cracked cell wall.',
     story: 'Grown in outdoor tanks fed by an on-site spring.',
     image: 'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=85&auto=format&fit=crop',
-    images: ['https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=85&auto=format&fit=crop'],
+    images: [
+      'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=1200&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1542838132-92c53300491e?w=1200&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=1200&q=85&auto=format&fit=crop',
+    ],
     tags: ['Cracked-cell', 'Spring-water grown'],
     rating: 4.6, reviewCount: 65, stock: 34, featured: false },
 
@@ -233,7 +301,11 @@ const SEED: Seed[] = [
     description: 'Our house granola — oats, maple, pecans, dried blueberries, sea salt.',
     story: 'Baked three mornings a week.',
     image: 'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=1200&q=85&auto=format&fit=crop',
-    images: ['https://images.unsplash.com/photo-1488477181946-6428a0291777?w=1200&q=85&auto=format&fit=crop'],
+    images: [
+      'https://images.unsplash.com/photo-1488477181946-6428a0291777?w=1200&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1542838132-92c53300491e?w=1200&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=1200&q=85&auto=format&fit=crop',
+    ],
     tags: ['Small-batch', 'Low-sugar'],
     rating: 4.7, reviewCount: 58, stock: 60, featured: false },
 
@@ -245,7 +317,11 @@ const SEED: Seed[] = [
     description: 'Unpasteurised raw almonds from a single Capay Valley orchard.',
     story: 'Harvested in September and shipped direct.',
     image: 'https://images.unsplash.com/photo-1574493582880-36b22d2c1ef2?w=1200&q=85&auto=format&fit=crop',
-    images: ['https://images.unsplash.com/photo-1574493582880-36b22d2c1ef2?w=1200&q=85&auto=format&fit=crop'],
+    images: [
+      'https://images.unsplash.com/photo-1574493582880-36b22d2c1ef2?w=1200&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1542838132-92c53300491e?w=1200&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=1200&q=85&auto=format&fit=crop',
+    ],
     tags: ['Certified organic', 'Single orchard'],
     rating: 4.6, reviewCount: 42, stock: 44, featured: false },
 
@@ -257,7 +333,11 @@ const SEED: Seed[] = [
     description: 'A loose-leaf blend of turmeric, ginger, black pepper, and lemongrass.',
     story: 'Blended weekly in small glass jars.',
     image: 'https://images.unsplash.com/photo-1597317613208-b44e41f83eaa?w=1200&q=85&auto=format&fit=crop',
-    images: ['https://images.unsplash.com/photo-1597317613208-b44e41f83eaa?w=1200&q=85&auto=format&fit=crop'],
+    images: [
+      'https://images.unsplash.com/photo-1597317613208-b44e41f83eaa?w=1200&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1542838132-92c53300491e?w=1200&q=85&auto=format&fit=crop',
+      'https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=1200&q=85&auto=format&fit=crop',
+    ],
     tags: ['Hand-blended', 'Caffeine-free'],
     rating: 4.7, reviewCount: 94, stock: 48, featured: false },
 ];
