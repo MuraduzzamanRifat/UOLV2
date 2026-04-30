@@ -1,51 +1,46 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FormEvent, useEffect, useMemo, useState } from 'react';
+import { FormEvent, useMemo, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import { useCart } from '@/lib/cart-store';
 import { fmtMoney } from '@/lib/format';
 import { computeTotals } from '@/lib/totals';
-import type { ProductSummary } from '@/types';
+import { getProductsByIds } from '@/lib/catalog';
 
 type Ship = 'standard' | 'express';
 type Pay  = 'COD' | 'BKASH' | 'NAGAD' | 'CARD';
 
+const ORDER_NUMBER = () =>
+  'GK-' + Math.random().toString(36).slice(2, 8).toUpperCase();
+
 export default function CheckoutForm() {
   const router = useRouter();
   const { lines, hydrated, clear } = useCart();
-  const [products, setProducts] = useState<Record<string, ProductSummary>>({});
   const [ship, setShip] = useState<Ship>('standard');
   const [pay,  setPay]  = useState<Pay>('COD');
   const [submitting, setSubmitting] = useState(false);
 
-  useEffect(() => {
-    if (!hydrated) return;
-    const ids = lines.map(l => l.id).filter(id => !products[id]);
-    if (!ids.length) return;
-    fetch('/api/products/by-ids?ids=' + encodeURIComponent(ids.join(',')))
-      .then(r => r.json())
-      .then((rows: ProductSummary[]) => {
-        const next = { ...products };
-        for (const p of rows) next[p.id] = p;
-        setProducts(next);
-      }).catch(() => {});
-  }, [lines, hydrated, products]);
+  const items = useMemo(() => {
+    const map = Object.fromEntries(getProductsByIds(lines.map(l => l.id)).map(p => [p.id, p]));
+    return lines
+      .map(l => ({ product: map[l.id], qty: l.qty }))
+      .filter((x): x is { product: ReturnType<typeof getProductsByIds>[number]; qty: number } => Boolean(x.product));
+  }, [lines]);
 
-  const items = useMemo(
-    () => lines.map(l => ({ product: products[l.id], qty: l.qty }))
-               .filter((x): x is { product: ProductSummary; qty: number } => Boolean(x.product)),
-    [lines, products],
-  );
   const subtotal = items.reduce((s, { product, qty }) => s + product.price * qty, 0);
   const t = computeTotals(subtotal, { express: ship === 'express' });
 
-  async function onSubmit(e: FormEvent<HTMLFormElement>) {
+  function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     if (submitting || items.length === 0) return;
     setSubmitting(true);
     const fd = new FormData(e.currentTarget);
-    const payload = {
+
+    // Demo: persist the order to localStorage and route to /thanks.
+    const order = {
+      number: ORDER_NUMBER(),
+      when: new Date().toISOString(),
       email: String(fd.get('email')),
       phone: String(fd.get('phone') ?? ''),
       ship: {
@@ -56,26 +51,23 @@ export default function CheckoutForm() {
         state:    String(fd.get('state')),
         zip:      String(fd.get('zip')),
         country:  String(fd.get('country') ?? 'US'),
-        phone:    String(fd.get('phone') ?? ''),
       },
       shippingMethod: ship,
       paymentMethod: pay,
-      items: items.map(({ product, qty }) => ({ id: product.id, qty })),
+      items: items.map(({ product, qty }) => ({
+        id: product.id,
+        title: product.title,
+        unitPrice: product.price,
+        qty,
+      })),
+      totals: { subtotal: t.subtotal, shipping: t.shipping, tax: t.tax, total: t.total },
     };
+
     try {
-      const res = await fetch('/api/orders', {
-        method: 'POST',
-        headers: { 'content-type': 'application/json' },
-        body: JSON.stringify(payload),
-      });
-      if (!res.ok) throw new Error('Order failed');
-      const { number } = await res.json();
-      clear();
-      router.push(`/thanks/${number}`);
-    } catch {
-      alert('Sorry — order could not be placed. Try again in a moment.');
-      setSubmitting(false);
-    }
+      localStorage.setItem('greenkart.lastOrder', JSON.stringify(order));
+    } catch { /* quota / private mode — ignore */ }
+    clear();
+    router.push('/thanks');
   }
 
   if (hydrated && items.length === 0) {

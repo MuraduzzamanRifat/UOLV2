@@ -1,9 +1,7 @@
 import Image from 'next/image';
 import Link from 'next/link';
 import ProductCard from '@/components/ProductCard';
-import { listProducts } from '@/lib/queries';
-
-export const revalidate = 60; // ISR every minute
+import { listProducts } from '@/lib/catalog';
 
 const TILES = [
   { slug: 'health',  label: 'Health & Strength', desc: 'Supplements, tinctures, collagen', tint: 'border-green' },

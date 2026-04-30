@@ -1,33 +1,21 @@
 'use client';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useEffect, useState } from 'react';
+import { useMemo } from 'react';
 import { useCart } from '@/lib/cart-store';
 import { fmtMoney } from '@/lib/format';
-import { computeTotals, FREE_SHIPPING_THRESHOLD } from '@/lib/totals';
-import type { ProductSummary } from '@/types';
+import { computeTotals } from '@/lib/totals';
+import { getProductsByIds } from '@/lib/catalog';
 
 export default function CartView() {
   const { lines, hydrated, setQty, remove } = useCart();
-  const [products, setProducts] = useState<Record<string, ProductSummary>>({});
 
-  useEffect(() => {
-    if (!hydrated) return;
-    const ids = lines.map(l => l.id).filter(id => !products[id]);
-    if (!ids.length) return;
-    fetch('/api/products/by-ids?ids=' + encodeURIComponent(ids.join(',')))
-      .then(r => r.json())
-      .then((rows: ProductSummary[]) => {
-        const next = { ...products };
-        for (const p of rows) next[p.id] = p;
-        setProducts(next);
-      })
-      .catch(() => {});
-  }, [lines, hydrated, products]);
-
-  const items = lines
-    .map(l => ({ product: products[l.id], qty: l.qty }))
-    .filter((x): x is { product: ProductSummary; qty: number } => Boolean(x.product));
+  const items = useMemo(() => {
+    const map = Object.fromEntries(getProductsByIds(lines.map(l => l.id)).map(p => [p.id, p]));
+    return lines
+      .map(l => ({ product: map[l.id], qty: l.qty }))
+      .filter((x): x is { product: ReturnType<typeof getProductsByIds>[number]; qty: number } => Boolean(x.product));
+  }, [lines]);
 
   const subtotal = items.reduce((s, { product, qty }) => s + product.price * qty, 0);
   const t = computeTotals(subtotal);

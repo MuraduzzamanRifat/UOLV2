@@ -39,3 +39,16 @@ export type ProductDetail = ProductSummary & {
 };
 
 export type SortKey = 'featured' | 'newest' | 'price-asc' | 'price-desc' | 'rating';
+
+/* SQLite-compatible string-union enums (mirror of what would be a Prisma enum). */
+export type OrderStatus =
+  | 'PENDING' | 'PAID' | 'SHIPPED' | 'DELIVERED' | 'CANCELLED' | 'REFUNDED';
+
+export type PaymentMethod =
+  | 'COD' | 'BKASH' | 'NAGAD' | 'ROCKET' | 'CARD' | 'STRIPE';
+
+export const ORDER_STATUSES: OrderStatus[] =
+  ['PENDING', 'PAID', 'SHIPPED', 'DELIVERED', 'CANCELLED', 'REFUNDED'];
+
+export const PAYMENT_METHODS: PaymentMethod[] =
+  ['COD', 'BKASH', 'NAGAD', 'ROCKET', 'CARD', 'STRIPE'];

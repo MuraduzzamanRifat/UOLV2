@@ -4,27 +4,17 @@ import Link from 'next/link';
 import { useCart } from '@/lib/cart-store';
 import { fmtMoney } from '@/lib/format';
 import { computeTotals, FREE_SHIPPING_THRESHOLD } from '@/lib/totals';
-import { useEffect, useState } from 'react';
-import type { ProductSummary } from '@/types';
+import { useEffect, useMemo } from 'react';
+import { getProductsByIds } from '@/lib/catalog';
 
 export default function CartDrawer() {
   const { lines, open, setOpen, setQty, remove, hydrated } = useCart();
-  const [products, setProducts] = useState<Record<string, ProductSummary>>({});
 
-  // Hydrate cart-line product details from API whenever lines change.
-  useEffect(() => {
-    if (!hydrated) return;
-    const ids = lines.map(l => l.id).filter(id => !products[id]);
-    if (!ids.length) return;
-    fetch('/api/products/by-ids?ids=' + encodeURIComponent(ids.join(',')))
-      .then(r => r.json())
-      .then((rows: ProductSummary[]) => {
-        const next = { ...products };
-        for (const p of rows) next[p.id] = p;
-        setProducts(next);
-      })
-      .catch(() => {});
-  }, [lines, hydrated, products]);
+  // Static-catalog lookup — no fetch, no API.
+  const products = useMemo(() => {
+    const ids = lines.map(l => l.id);
+    return Object.fromEntries(getProductsByIds(ids).map(p => [p.id, p]));
+  }, [lines]);
 
   // Lock body scroll when open
   useEffect(() => {
@@ -41,7 +31,7 @@ export default function CartDrawer() {
 
   const items = lines
     .map(l => ({ product: products[l.id], qty: l.qty }))
-    .filter((x): x is { product: ProductSummary; qty: number } => Boolean(x.product));
+    .filter((x): x is { product: ReturnType<typeof getProductsByIds>[number]; qty: number } => Boolean(x.product));
 
   const subtotal = items.reduce((s, { product, qty }) => s + product.price * qty, 0);
   const totals = computeTotals(subtotal);

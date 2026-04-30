@@ -1,8 +1,7 @@
 import { notFound } from 'next/navigation';
-import Image from 'next/image';
 import Link from 'next/link';
 import type { Metadata } from 'next';
-import { getProduct, getRelated } from '@/lib/queries';
+import { ALL_SLUGS, getProduct, getRelated } from '@/lib/catalog';
 import { fmtMoney, discountPct } from '@/lib/format';
 import ProductCard from '@/components/ProductCard';
 import PdpBuy from '@/components/PdpBuy';
@@ -10,8 +9,8 @@ import PdpGallery from '@/components/PdpGallery';
 
 type Params = { slug: string };
 
-export async function generateMetadata({ params }: { params: Params }): Promise<Metadata> {
-  const p = await getProduct(params.slug);
+export function generateMetadata({ params }: { params: Params }): Metadata {
+  const p = getProduct(params.slug);
   if (!p) return { title: 'Product not found' };
   return {
     title: p.title,
@@ -20,13 +19,17 @@ export async function generateMetadata({ params }: { params: Params }): Promise<
   };
 }
 
-export const revalidate = 60;
+export function generateStaticParams() {
+  return ALL_SLUGS.map(slug => ({ slug }));
+}
 
-export default async function ProductPage({ params }: { params: Params }) {
-  const p = await getProduct(params.slug);
+export const dynamicParams = false;
+
+export default function ProductPage({ params }: { params: Params }) {
+  const p = getProduct(params.slug);
   if (!p) notFound();
 
-  const related = await getRelated(p.id, p.category.id);
+  const related = getRelated(p.id, p.category.slug);
   const off = discountPct(p.price, p.oldPrice);
 
   // JSON-LD product schema
