@@ -54,10 +54,13 @@ export default function CartDrawer() {
           <button
             type="button"
             onClick={() => setOpen(false)}
-            className="w-8 h-8 rounded-full bg-surface hover:bg-green-pale hover:text-green-dark text-ink text-xs font-semibold inline-flex items-center justify-center"
+            className="w-8 h-8 rounded-full bg-surface hover:bg-green-pale hover:text-green-dark text-ink inline-flex items-center justify-center cursor-pointer transition-colors"
             aria-label="Close cart"
           >
-            ✕
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.8} strokeLinecap="round" strokeLinejoin="round">
+              <line x1="18" y1="6" x2="6" y2="18" />
+              <line x1="6" y1="6" x2="18" y2="18" />
+            </svg>
           </button>
         </header>
 
@@ -76,10 +79,10 @@ export default function CartDrawer() {
                   </Link>
                   <span className="block text-[11px] text-muted">{qty} × {fmtMoney(product.price)}</span>
                   <div className="flex items-center gap-1.5 mt-1.5 text-[11px]">
-                    <button onClick={() => setQty(product.id, qty - 1)} className="w-6 h-6 rounded-full border border-rule hover:border-green hover:text-green-dark inline-flex items-center justify-center" aria-label="Decrease">−</button>
+                    <button type="button" onClick={() => setQty(product.id, qty - 1)} className="w-6 h-6 rounded-full border border-rule hover:border-green hover:text-green-dark inline-flex items-center justify-center cursor-pointer transition-colors" aria-label="Decrease quantity">−</button>
                     <span className="min-w-[14px] text-center font-semibold">{qty}</span>
-                    <button onClick={() => setQty(product.id, qty + 1)} className="w-6 h-6 rounded-full border border-rule hover:border-green hover:text-green-dark inline-flex items-center justify-center" aria-label="Increase">+</button>
-                    <button onClick={() => remove(product.id)} className="ml-auto text-muted text-[10px] tracking-widest uppercase font-semibold hover:text-danger">Remove</button>
+                    <button type="button" onClick={() => setQty(product.id, qty + 1)} className="w-6 h-6 rounded-full border border-rule hover:border-green hover:text-green-dark inline-flex items-center justify-center cursor-pointer transition-colors" aria-label="Increase quantity">+</button>
+                    <button type="button" onClick={() => remove(product.id)} className="ml-auto text-muted text-[10px] tracking-widest uppercase font-semibold hover:text-danger cursor-pointer transition-colors">Remove</button>
                   </div>
                 </div>
                 <b className="text-[14px] text-green-dark font-bold">{fmtMoney(product.price * qty)}</b>

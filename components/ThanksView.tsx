@@ -39,7 +39,11 @@ export default function ThanksView() {
 
   return (
     <section className="max-w-[680px] mx-auto px-5 sm:px-12 py-16 sm:py-24 text-center">
-      <div aria-hidden className="w-[72px] h-[72px] mx-auto mb-6 rounded-full bg-green text-white inline-flex items-center justify-center text-3xl font-bold">✓</div>
+      <div aria-hidden className="w-[72px] h-[72px] mx-auto mb-6 rounded-full bg-green text-white inline-flex items-center justify-center">
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} strokeLinecap="round" strokeLinejoin="round">
+          <polyline points="20 6 9 17 4 12" />
+        </svg>
+      </div>
       <p className="eyebrow">Order confirmed</p>
       <h1 className="text-3xl sm:text-5xl font-bold mb-3.5">Thank you.<br />Your order is on its way.</h1>
       <p className="text-muted max-w-[52ch] mx-auto mb-8 text-[15.5px]">A confirmation has been sent to your inbox. We&rsquo;ll email again the morning it ships.</p>

@@ -105,7 +105,11 @@ export default function ProductPage({ params }: { params: Params }) {
 
           {p.producer && (
             <figure className="grid grid-cols-[40px_1fr] gap-3.5 p-4 bg-green-pale rounded-sm m-0">
-              <span aria-hidden className="w-10 h-10 rounded-full bg-paper text-green-dark inline-flex items-center justify-center text-lg">❦</span>
+              <span aria-hidden className="w-10 h-10 rounded-full bg-paper text-green-dark inline-flex items-center justify-center">
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.6} strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M12 2v6M5 9c0-2 2-3 4-2s3 3 3 5c0-2 1-4 3-5s4 0 4 2c0 4-7 8-7 8s-7-4-7-8z" />
+                </svg>
+              </span>
               <figcaption className="flex flex-col gap-0.5">
                 <strong className="text-[13px] text-ink font-bold">{p.producer}</strong>
                 <small className="text-[10px] tracking-widest uppercase text-muted font-semibold">{p.producerSince}</small>

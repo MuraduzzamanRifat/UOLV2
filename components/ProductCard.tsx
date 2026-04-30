@@ -7,8 +7,8 @@ import AddToBag from './AddToBag';
 export default function ProductCard({ product }: { product: ProductSummary }) {
   const off = discountPct(product.price, product.oldPrice);
   return (
-    <article className="card card-hover overflow-hidden flex flex-col">
-      <Link href={`/p/${product.slug}`} className="relative block aspect-[4/5] bg-surface overflow-hidden">
+    <article className="group card card-hover overflow-hidden flex flex-col">
+      <Link href={`/p/${product.slug}`} className="relative block aspect-[4/5] bg-surface overflow-hidden cursor-pointer">
         {product.oldPrice && (
           <span className="absolute top-3 left-3 z-10 px-2.5 py-1 rounded-full bg-danger text-white text-[10px] font-bold tracking-wider uppercase">
             −{off}%
