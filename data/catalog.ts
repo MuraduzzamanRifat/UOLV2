@@ -19,8 +19,9 @@ type Seed = Omit<ProductDetail, 'category' | 'currency'> & { catKey: keyof typeo
 const SEED: Seed[] = [
   /* HEALTH */
   { id: 'p01', slug: 'marine-collagen-powder', catKey: 'health', subcat: 'Collagen',
-    title: 'Marine Collagen Powder', subtitle: 'Hydrolysed peptides, unflavoured',
-    price: 42, oldPrice: 48, weight: '200 g pouch', origin: 'Iceland',
+    title: 'Marine Collagen Powder',
+    titleBn: 'মেরিন কলাজেন পাউডার', subtitle: 'Hydrolysed peptides, unflavoured',
+    price: 1990, oldPrice: 2290, weight: '200 g pouch', origin: 'Iceland',
     producer: 'Kalda Naturals', producerSince: 'since 2009',
     producerQuote: 'Nothing is wasted — every fish becomes food, feed or collagen.',
     description: 'Pure hydrolysed marine collagen from sustainably caught Icelandic cod. Dissolves clear in hot or cold liquids.',
@@ -35,8 +36,9 @@ const SEED: Seed[] = [
     rating: 4.8, reviewCount: 192, stock: 28, featured: true },
 
   { id: 'p02', slug: 'omega-3-fish-oil', catKey: 'health', subcat: 'Omega-3',
-    title: 'Omega-3 Fish Oil', subtitle: '60 softgels · 1000 mg',
-    price: 24.5, oldPrice: null, weight: '60 softgels', origin: 'Pacific, USA',
+    title: 'Omega-3 Fish Oil',
+    titleBn: 'ওমেগা-৩ ফিশ অয়েল', subtitle: '60 softgels · 1000 mg',
+    price: 1490, oldPrice: null, weight: '60 softgels', origin: 'Pacific, USA',
     producer: 'Nord Sea Labs', producerSince: 'since 2003',
     producerQuote: 'Our oil is bottled within ten days of catch.',
     description: 'High-concentration EPA/DHA fish oil from small-vessel wild catch. Low-temperature distilled.',
@@ -51,8 +53,9 @@ const SEED: Seed[] = [
     rating: 4.7, reviewCount: 311, stock: 54, featured: false },
 
   { id: 'p03', slug: 'l-tryptophan-capsules', catKey: 'health', subcat: 'Amino acids',
-    title: 'L-Tryptophan Capsules', subtitle: '500 mg · 30 vegan capsules',
-    price: 37.6, oldPrice: null, weight: '30 capsules', origin: 'Germany',
+    title: 'L-Tryptophan Capsules',
+    titleBn: 'এল-ট্রিপটোফেন ক্যাপসুল', subtitle: '500 mg · 30 vegan capsules',
+    price: 2090, oldPrice: null, weight: '30 capsules', origin: 'Germany',
     producer: 'Freiburg Ferments', producerSince: 'since 2015',
     producerQuote: 'Amino acids from fermentation, never from feathers.',
     description: 'A plant-fermented form of tryptophan, the amino acid that supports restful sleep and balanced mood.',
@@ -67,8 +70,9 @@ const SEED: Seed[] = [
     rating: 4.5, reviewCount: 88, stock: 36, featured: false },
 
   { id: 'p04', slug: 'red-clover-tincture', catKey: 'health', subcat: 'Tinctures',
-    title: 'Red Clover Tincture', subtitle: 'Hand-pressed, traditional',
-    price: 8.8, oldPrice: null, weight: '50 ml dropper', origin: 'Vermont',
+    title: 'Red Clover Tincture',
+    titleBn: 'রেড ক্লোভার টিংচার', subtitle: 'Hand-pressed, traditional',
+    price: 890, oldPrice: null, weight: '50 ml dropper', origin: 'Vermont',
     producer: 'Windy Hill Apothecary', producerSince: 'since 1994',
     producerQuote: 'We wild-harvest on a thirteen-year rotation.',
     description: 'Traditional red clover tincture made with wild-harvested blossoms and grain alcohol.',
@@ -83,8 +87,9 @@ const SEED: Seed[] = [
     rating: 4.8, reviewCount: 46, stock: 22, featured: true },
 
   { id: 'p05', slug: 'grass-fed-gelatin', catKey: 'health', subcat: 'Collagen',
-    title: 'Grass-fed Beef Gelatin', subtitle: 'Unflavoured · for broths & jellies',
-    price: 17.8, oldPrice: null, weight: '400 g', origin: 'Brazil',
+    title: 'Grass-fed Beef Gelatin',
+    titleBn: 'গ্রাস-ফেড বিফ জেলাটিন', subtitle: 'Unflavoured · for broths & jellies',
+    price: 1190, oldPrice: null, weight: '400 g', origin: 'Brazil',
     producer: 'Cooperativa Verde', producerSince: 'since 1998',
     producerQuote: 'Grass, sun, and time.',
     description: 'Unflavoured grass-fed beef gelatin for broths, jellies, gummies, or a morning cup.',
@@ -100,8 +105,9 @@ const SEED: Seed[] = [
 
   /* BEAUTY */
   { id: 'p06', slug: 'lavender-essential-oil', catKey: 'beauty', subcat: 'Essential oils',
-    title: 'Lavender Essential Oil', subtitle: 'Steam-distilled, Provence',
-    price: 5.95, oldPrice: null, weight: '10 ml', origin: 'Provence, France',
+    title: 'Lavender Essential Oil',
+    titleBn: 'ল্যাভেন্ডার এসেনশিয়াল অয়েল', subtitle: 'Steam-distilled, Provence',
+    price: 590, oldPrice: null, weight: '10 ml', origin: 'Provence, France',
     producer: 'Maison de la Lavande', producerSince: 'since 1972',
     producerQuote: 'The mountain lavender is a different plant, different oil.',
     description: 'Single-origin lavender oil from a seven-hundred-metre Provençal plateau.',
@@ -116,8 +122,9 @@ const SEED: Seed[] = [
     rating: 4.9, reviewCount: 264, stock: 62, featured: true },
 
   { id: 'p07', slug: 'rose-water-toner', catKey: 'beauty', subcat: 'Facial care',
-    title: 'Rose Water Toner', subtitle: 'Damask rose, hand-distilled',
-    price: 12.4, oldPrice: null, weight: '250 ml glass', origin: 'Türkiye',
+    title: 'Rose Water Toner',
+    titleBn: 'রোজ ওয়াটার টোনার', subtitle: 'Damask rose, hand-distilled',
+    price: 790, oldPrice: null, weight: '250 ml glass', origin: 'Türkiye',
     producer: 'Gül Kooperatifi', producerSince: 'since 1961',
     producerQuote: 'We distil at dawn. That is when the rose gives its best water.',
     description: 'A simple rose water from Damask blooms hand-distilled at dawn in copper alembics.',
@@ -132,8 +139,9 @@ const SEED: Seed[] = [
     rating: 4.8, reviewCount: 172, stock: 38, featured: false },
 
   { id: 'p08', slug: 'argan-shampoo-bar', catKey: 'beauty', subcat: 'Hair',
-    title: 'Argan Oil Shampoo Bar', subtitle: 'Plastic-free · cold-process',
-    price: 9.8, oldPrice: null, weight: '95 g bar', origin: 'USA',
+    title: 'Argan Oil Shampoo Bar',
+    titleBn: 'আরগান অয়েল শ্যাম্পু বার', subtitle: 'Plastic-free · cold-process',
+    price: 690, oldPrice: null, weight: '95 g bar', origin: 'USA',
     producer: 'Maple Lane Soap Co.', producerSince: 'since 2016',
     producerQuote: 'One bar replaces three plastic bottles, roughly.',
     description: 'A cold-process shampoo bar with fair-trade argan oil and a whisper of rosemary.',
@@ -148,8 +156,9 @@ const SEED: Seed[] = [
     rating: 4.7, reviewCount: 144, stock: 70, featured: false },
 
   { id: 'p09', slug: 'rosehip-day-cream', catKey: 'beauty', subcat: 'Facial care',
-    title: 'Rosehip Day Cream', subtitle: 'For dry and sensitive skin',
-    price: 28, oldPrice: 34, weight: '50 ml glass', origin: 'USA',
+    title: 'Rosehip Day Cream',
+    titleBn: 'রোজশিপ ডে ক্রিম', subtitle: 'For dry and sensitive skin',
+    price: 1690, oldPrice: 1990, weight: '50 ml glass', origin: 'USA',
     producer: 'Still Studio', producerSince: 'since 2019',
     producerQuote: 'Six ingredients, each doing real work.',
     description: 'A minimalist day cream built on rosehip seed oil and squalane.',
@@ -165,8 +174,9 @@ const SEED: Seed[] = [
 
   /* HYGIENE */
   { id: 'p10', slug: 'foot-powder', catKey: 'hygiene', subcat: 'Foot care',
-    title: 'Deodorising Foot Powder', subtitle: 'Zinc + clay + peppermint',
-    price: 4.4, oldPrice: null, weight: '75 g', origin: 'USA',
+    title: 'Deodorising Foot Powder',
+    titleBn: 'ডিওডোরাইজিং ফুট পাউডার', subtitle: 'Zinc + clay + peppermint',
+    price: 350, oldPrice: null, weight: '75 g', origin: 'USA',
     producer: 'Bright Ledge Apothecary', producerSince: 'since 2012',
     producerQuote: 'Simple things done well.',
     description: 'A simple zinc-and-clay powder with a clean peppermint finish.',
@@ -181,8 +191,9 @@ const SEED: Seed[] = [
     rating: 4.7, reviewCount: 214, stock: 90, featured: false },
 
   { id: 'p11', slug: 'bamboo-toothbrush', catKey: 'hygiene', subcat: 'Oral care',
-    title: 'Bamboo Toothbrush', subtitle: 'Pack of four · soft bristles',
-    price: 11.2, oldPrice: null, weight: 'Pack of 4', origin: 'Vietnam',
+    title: 'Bamboo Toothbrush',
+    titleBn: 'বাঁশের টুথব্রাশ (৪টি)', subtitle: 'Pack of four · soft bristles',
+    price: 690, oldPrice: null, weight: 'Pack of 4', origin: 'Vietnam',
     producer: 'Mekong Bamboo Co-op', producerSince: 'since 2014',
     producerQuote: 'Our bamboo renews in five years, not fifty.',
     description: 'Four soft-bristle bamboo brushes with compostable handles and recyclable packaging.',
@@ -197,8 +208,9 @@ const SEED: Seed[] = [
     rating: 4.6, reviewCount: 186, stock: 128, featured: false },
 
   { id: 'p12', slug: 'castile-hand-soap', catKey: 'hygiene', subcat: 'Bath',
-    title: 'Castile Hand Soap', subtitle: 'Olive + laurel · refillable bottle',
-    price: 7.6, oldPrice: null, weight: '500 ml glass', origin: 'Greece',
+    title: 'Castile Hand Soap',
+    titleBn: 'ক্যাস্টাইল হ্যান্ড সোপ', subtitle: 'Olive + laurel · refillable bottle',
+    price: 590, oldPrice: null, weight: '500 ml glass', origin: 'Greece',
     producer: 'Evia Soap Works', producerSince: 'since 1987',
     producerQuote: 'If it isn\'t simple, we don\'t sell it.',
     description: 'A traditional olive-and-laurel castile liquid soap in a refillable glass bottle.',
@@ -213,8 +225,9 @@ const SEED: Seed[] = [
     rating: 4.8, reviewCount: 98, stock: 54, featured: true },
 
   { id: 'p13', slug: 'mineral-deodorant', catKey: 'hygiene', subcat: 'Deodorant',
-    title: 'Mineral Deodorant Stick', subtitle: 'Aluminium-free · 48 hour',
-    price: 9, oldPrice: 11.5, weight: '70 g stick', origin: 'USA',
+    title: 'Mineral Deodorant Stick',
+    titleBn: 'মিনারেল ডিওডোরেন্ট স্টিক', subtitle: 'Aluminium-free · 48 hour',
+    price: 690, oldPrice: 890, weight: '70 g stick', origin: 'USA',
     producer: 'Bright Ledge Apothecary', producerSince: 'since 2012',
     producerQuote: 'We wear it ourselves, all summer.',
     description: 'A twist-up mineral deodorant built on magnesium hydroxide.',
@@ -230,8 +243,9 @@ const SEED: Seed[] = [
 
   /* FOOD */
   { id: 'p14', slug: 'wildflower-honey', catKey: 'food', subcat: 'Honey',
-    title: 'Raw Wildflower Honey', subtitle: 'Unfiltered · hand-extracted',
-    price: 14.5, oldPrice: null, weight: '500 g jar', origin: 'Vermont',
+    title: 'Raw Wildflower Honey',
+    titleBn: 'কাঁচা বনফুলের মধু', subtitle: 'Unfiltered · hand-extracted',
+    price: 890, oldPrice: null, weight: '500 g jar', origin: 'Vermont',
     producer: 'Gibson Apiary', producerSince: 'since 2003',
     producerQuote: 'Every jar tastes of wherever the bees were that week.',
     description: 'Unfiltered, unpasteurised wildflower honey from a small Vermont apiary.',
@@ -246,8 +260,9 @@ const SEED: Seed[] = [
     rating: 4.9, reviewCount: 156, stock: 40, featured: true },
 
   { id: 'p15', slug: 'ceremonial-matcha', catKey: 'food', subcat: 'Tea',
-    title: 'Ceremonial-grade Matcha', subtitle: 'First harvest · stone-ground',
-    price: 28, oldPrice: 34, weight: '40 g tin', origin: 'Uji, Japan',
+    title: 'Ceremonial-grade Matcha',
+    titleBn: 'সেরিমোনিয়াল মাচা চা', subtitle: 'First harvest · stone-ground',
+    price: 1990, oldPrice: 2390, weight: '40 g tin', origin: 'Uji, Japan',
     producer: 'Marufuku Tea Fields', producerSince: 'since 1871',
     producerQuote: 'The first harvest of spring — nothing else will do for tea.',
     description: 'Ceremonial-grade matcha from a seventh-generation Uji family field.',
@@ -262,8 +277,9 @@ const SEED: Seed[] = [
     rating: 4.9, reviewCount: 78, stock: 18, featured: true },
 
   { id: 'p16', slug: 'olive-oil-tuscan', catKey: 'food', subcat: 'Oils',
-    title: 'Cold-pressed Olive Oil', subtitle: 'Single-estate Tuscan',
-    price: 24, oldPrice: null, weight: '500 ml tin', origin: 'Toscana, Italy',
+    title: 'Cold-pressed Olive Oil',
+    titleBn: 'কোল্ড-প্রেসড অলিভ অয়েল', subtitle: 'Single-estate Tuscan',
+    price: 1690, oldPrice: null, weight: '500 ml tin', origin: 'Toscana, Italy',
     producer: 'Podere Vecchio', producerSince: 'since 1962',
     producerQuote: 'The mill runs four hours a day in November.',
     description: 'A single-estate Tuscan olive oil, cold-pressed within four hours of picking.',
@@ -278,8 +294,9 @@ const SEED: Seed[] = [
     rating: 4.8, reviewCount: 92, stock: 28, featured: true },
 
   { id: 'p17', slug: 'chlorella-powder', catKey: 'food', subcat: 'Superfoods',
-    title: 'Bio Chlorella Powder', subtitle: 'Single-strain · cracked cell',
-    price: 19.9, oldPrice: null, weight: '150 g jar', origin: 'Taiwan',
+    title: 'Bio Chlorella Powder',
+    titleBn: 'বায়ো ক্লোরেলা পাউডার', subtitle: 'Single-strain · cracked cell',
+    price: 1290, oldPrice: null, weight: '150 g jar', origin: 'Taiwan',
     producer: 'Clear Lake Algae', producerSince: 'since 1998',
     producerQuote: 'We grow it in daylight and spring water — that is all.',
     description: 'A single-strain chlorella with a mechanically cracked cell wall.',
@@ -294,8 +311,9 @@ const SEED: Seed[] = [
     rating: 4.6, reviewCount: 65, stock: 34, featured: false },
 
   { id: 'p18', slug: 'house-granola', catKey: 'food', subcat: 'Breakfast',
-    title: 'Granola with Nuts & Berries', subtitle: 'Oven-baked · low sugar',
-    price: 8.4, oldPrice: null, weight: '350 g bag', origin: 'Vermont',
+    title: 'Granola with Nuts & Berries',
+    titleBn: 'বাদাম ও বেরির গ্রানোলা', subtitle: 'Oven-baked · low sugar',
+    price: 490, oldPrice: null, weight: '350 g bag', origin: 'Vermont',
     producer: 'GreenKart Kitchen', producerSince: 'since 2024',
     producerQuote: 'Oats, maple, patience.',
     description: 'Our house granola — oats, maple, pecans, dried blueberries, sea salt.',
@@ -310,8 +328,9 @@ const SEED: Seed[] = [
     rating: 4.7, reviewCount: 58, stock: 60, featured: false },
 
   { id: 'p19', slug: 'raw-almonds', catKey: 'food', subcat: 'Nuts',
-    title: 'Organic Raw Almonds', subtitle: 'Single-orchard, California',
-    price: 11.6, oldPrice: null, weight: '300 g bag', origin: 'California',
+    title: 'Organic Raw Almonds',
+    titleBn: 'অর্গানিক কাঁচা কাঠবাদাম', subtitle: 'Single-orchard, California',
+    price: 790, oldPrice: null, weight: '300 g bag', origin: 'California',
     producer: 'Capay Organic', producerSince: 'since 1989',
     producerQuote: 'Almonds are a desert crop. Drip-irrigated and honest.',
     description: 'Unpasteurised raw almonds from a single Capay Valley orchard.',
@@ -326,8 +345,9 @@ const SEED: Seed[] = [
     rating: 4.6, reviewCount: 42, stock: 44, featured: false },
 
   { id: 'p20', slug: 'turmeric-ginger-tea', catKey: 'food', subcat: 'Tea',
-    title: 'Turmeric & Ginger Tea', subtitle: 'Loose-leaf · warming blend',
-    price: 12.8, oldPrice: null, weight: '80 g tin', origin: 'USA',
+    title: 'Turmeric & Ginger Tea',
+    titleBn: 'হলুদ ও আদার চা', subtitle: 'Loose-leaf · warming blend',
+    price: 690, oldPrice: null, weight: '80 g tin', origin: 'USA',
     producer: 'Small Ritual Tea', producerSince: 'since 2017',
     producerQuote: 'Warming, peppery, and bright.',
     description: 'A loose-leaf blend of turmeric, ginger, black pepper, and lemongrass.',
@@ -345,7 +365,7 @@ const SEED: Seed[] = [
 export const PRODUCTS: ProductDetail[] = SEED.map(s => ({
   ...s,
   category: C[s.catKey],
-  currency: 'USD',
+  currency: 'BDT',
 }));
 
 export function toSummary(p: ProductDetail): ProductSummary {

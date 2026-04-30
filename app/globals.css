@@ -45,6 +45,29 @@
     @apply bg-paper text-green-dark;
     @apply hover:bg-green-pale;
   }
+  .btn-sale {
+    @apply bg-sale text-white;
+    @apply hover:bg-sale-dark;
+  }
+
+  /* Bangla text utility — uses Hind Siliguri with slightly looser line-height */
+  .bn {
+    font-family: 'Hind Siliguri', 'Noto Sans Bengali', sans-serif;
+    line-height: 1.45;
+    font-feature-settings: normal;
+  }
+
+  /* Loud red discount disc — top-left of the product card */
+  .disc {
+    @apply absolute top-3 left-3 z-10 inline-flex items-center justify-center
+           rounded-full bg-sale text-white font-bold shadow-md;
+    width: 46px; height: 46px;
+    font-size: 12px;
+    line-height: 1;
+    letter-spacing: 0;
+  }
+  .disc strong { font-size: 15px; font-weight: 800; line-height: 1; }
+  .disc small  { font-size: 9px; font-weight: 700; opacity: .9; margin-top: 1px; letter-spacing: .04em; }
 
   .eyebrow {
     @apply inline-block text-[11px] font-bold tracking-[0.18em] uppercase text-green-dark mb-3;

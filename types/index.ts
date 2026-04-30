@@ -13,6 +13,7 @@ export type ProductSummary = {
   id: string;
   slug: string;
   title: string;
+  titleBn: string;
   subtitle: string | null;
   price: number;
   oldPrice: number | null;

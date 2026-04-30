@@ -71,15 +71,18 @@ export default function ProductPage({ params }: { params: Params }) {
             <span className="text-ochre tracking-widest">★★★★★</span>
             <span>{p.rating.toFixed(1)} · {p.reviewCount} review{p.reviewCount === 1 ? '' : 's'}</span>
           </p>
-          <h1 className="text-2xl sm:text-4xl font-bold leading-tight">{p.title}</h1>
+          <h1 className="text-2xl sm:text-4xl font-extrabold text-ink leading-tight">{p.title}</h1>
+          {p.titleBn && (
+            <p className="bn text-[18px] sm:text-[22px] text-green-dark font-semibold leading-snug -mt-1">{p.titleBn}</p>
+          )}
           {p.subtitle && <p className="text-muted italic text-[15px]">{p.subtitle}</p>}
 
-          <div className="py-3.5 border-y border-rule-soft flex items-baseline gap-3">
-            <span className="text-2xl sm:text-3xl font-bold text-green-dark">{fmtMoney(p.price)}</span>
+          <div className="py-3.5 border-y border-rule-soft flex items-baseline gap-3 flex-wrap">
+            <span className="text-2xl sm:text-3xl font-extrabold text-sale">{fmtMoney(p.price)}</span>
             {p.oldPrice && (
               <>
                 <s className="text-muted text-[17px] font-medium">{fmtMoney(p.oldPrice)}</s>
-                <span className="text-[11px] font-bold tracking-wider uppercase bg-danger text-white px-2.5 py-1 rounded-full">−{off}%</span>
+                <span className="text-[11px] font-bold tracking-wider uppercase bg-sale text-white px-2.5 py-1 rounded-full">−{off}% OFF</span>
               </>
             )}
           </div>
@@ -129,7 +132,7 @@ export default function ProductPage({ params }: { params: Params }) {
               Delivery &amp; returns <span className="text-green-dark">›</span>
             </summary>
             <div className="text-[14px] text-ink-2 pb-3.5 leading-relaxed">
-              Free delivery on orders over $50. Ships within 48 hours. Returns accepted within 14 days for non-perishables.
+              Free delivery in Dhaka over ৳ 1,500. Cash on delivery available. Ships within 48 hours; returns accepted within 7 days for non-perishables.
             </div>
           </details>
         </div>
